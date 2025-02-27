@@ -9,8 +9,8 @@
 
 if (version_compare(\Composer\InstalledVersions::getVersion('symfony/http-foundation'), '6.0.0') === -1) {
     // The version of http-foundation is < 6, include a class without return types
-    include 'VirtualSessionStorage-HttpFoundation<6.php';
+    include 'VirtualSessionStorage-HttpFoundationLess6.php';
 } else {
     // The version of http-foundation is >= 6, include a class with return types
-    include 'VirtualSessionStorage-HttpFoundation6+.php';
+    include 'VirtualSessionStorage-HttpFoundation6Plus.php';
 }
