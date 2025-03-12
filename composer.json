@@ -26,8 +26,8 @@
         }
     }
   , "require": {
-        "php": ">=7.4"
-      , "ratchet/rfc6455": "^0.4.0"
+        "php": ">=5.4.2"
+      , "ratchet/rfc6455": "^0.3.1"
       , "react/socket": "^1.0 || ^0.8 || ^0.7 || ^0.6 || ^0.5"
       , "react/event-loop": ">=0.4"
       , "guzzlehttp/psr7": "^1.7|^2.0"
