@@ -1,5 +1,7 @@
 <?php
 namespace Ratchet\WebSocket;
+
+use GuzzleHttp\Psr7\HttpFactory;
 use GuzzleHttp\Psr7\Message;
 use Psr\Http\Message\RequestInterface;
 use Ratchet\ComponentInterface;
@@ -87,7 +89,7 @@ class WsServer implements HttpServerInterface {
         $this->connections = new \SplObjectStorage;
 
         $this->closeFrameChecker   = new CloseFrameChecker;
-        $this->handshakeNegotiator = new ServerNegotiator(new RequestVerifier);
+        $this->handshakeNegotiator = new ServerNegotiator(new RequestVerifier, new HttpFactory);
         $this->handshakeNegotiator->setStrictSubProtocolCheck(true);
 
         if ($component instanceof WsServerInterface) {
